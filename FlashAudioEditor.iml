@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="FlashAudioEditor">
+    <configurations>
+      <configuration name="FlashAudioEditor" pure-as="true" main-class="Main" output-file="FlashAudioEditor.swf" output-folder="$MODULE_DIR$/bin" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
+        <dependencies target-player="11.1">
+          <entries>
+            <entry library-id="0ec2de5a-11b4-4c7e-bd03-0c6374f252ca">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="85788853-4aa7-4691-b70b-8275fa16b407">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="96ffdffa-7e99-4008-bc22-5e33ef356509">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="6130bb6a-b19c-4052-9d0a-9d5c5f94b726">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="a75b2f7a-2a4f-4917-8fc9-d2d491110d1c">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="4aa86222-be71-41b0-b53a-77922410c74b">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="d5ca3616-f743-4880-96d6-258300d06d0b">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="1e08ae39-2899-4ddf-9206-c39cee8a09c3">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="84e99bde-fd67-494e-881b-48494af937fe">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="bb900758-76e1-47fc-afca-bd68eb4361ef">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="45a695d6-76f8-4e78-b558-21ffb7da53a5">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="8e08897c-56cb-4f81-b9bf-572e6d2073f1">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="4.6.0" />
+        </dependencies>
+        <compiler-options>
+          <map>
+            <entry key="compiler.debug.swf" value="false" />
+          </map>
+          <option name="additionalOptions" value="-define=CONFIG::debug,false" />
+        </compiler-options>
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="4.6.0" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="0ec2de5a-11b4-4c7e-bd03-0c6374f252ca" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3commons-bytecode-1.1.1.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="85788853-4aa7-4691-b70b-8275fa16b407" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3commons-lang-0.3.6.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="96ffdffa-7e99-4008-bc22-5e33ef356509" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3commons-logging-2.7.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="6130bb6a-b19c-4052-9d0a-9d5c5f94b726" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3commons-reflect-1.6.0.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="a75b2f7a-2a4f-4917-8fc9-d2d491110d1c" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3corelib.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="4aa86222-be71-41b0-b53a-77922410c74b" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3crypto.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="d5ca3616-f743-4880-96d6-258300d06d0b" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3swf.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="1e08ae39-2899-4ddf-9206-c39cee8a09c3" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/blooddy_crypto.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="84e99bde-fd67-494e-881b-48494af937fe" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/robotlegs-framework-v1.5.2.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="bb900758-76e1-47fc-afca-bd68eb4361ef" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/shineMP3_alchemy.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="45a695d6-76f8-4e78-b558-21ffb7da53a5" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/sw3.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="8e08897c-56cb-4f81-b9bf-572e6d2073f1" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/Console.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

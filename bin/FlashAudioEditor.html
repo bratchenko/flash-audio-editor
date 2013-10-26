@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>FlashAudioEditor</title>
+    <meta name="google" value="notranslate"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <style type="text/css" media="screen">
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            /*text-align: center;*/
+            background-color: #ffffff;
+        }
+
+        object:focus {
+            outline: none;
+        }
+
+        #flashContent {
+            display: none;
+        }
+    </style>
+
+    <script type="text/javascript" src="swfobject.js"></script>
+    <script type="text/javascript">
+        var swfVersionStr = "11.1.0";
+        var xiSwfUrlStr = "playerProductInstall.swf";
+        var flashvars = {};
+        var params = {};
+        params.quality = "high";
+        params.bgcolor = "0x000000";
+        params.allowscriptaccess = "always";
+        params.allowfullscreen = "true";
+        var attributes = {};
+        attributes.id = "FlashAudioEditor";
+        attributes.name = "FlashAudioEditor";
+        attributes.align = "middle";
+        swfobject.embedSWF(
+                "FlashAudioEditor.swf", "flashContent",
+                "80", "20",
+                swfVersionStr, xiSwfUrlStr,
+                flashvars, params, attributes);
+        swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+    </script>
+
+    <script type="text/javascript">
+
+        //----------------------------------
+        //  Создание
+        //----------------------------------
+
+        function clickCreateEmptyTrack()
+        {
+            document.myform.fae_tf.value += "createEmptyTrack RETURNED >>> " + document.getElementById("FlashAudioEditor").createEmptyTrack() + "\n";
+        }
+
+        function clickCreateTrackFromURL()
+        {
+            document.myform.fae_tf.value += "createTrackFromUrl RETURNED >>> " + document.getElementById("FlashAudioEditor").createTrackFromUrl(document.myform.url_track_url_input.value) + "\n";
+        }
+
+        function fae_loadingLocalFile(trackId, status, progress)
+        {
+            document.myform.fae_tf.value += "fae_loadingLocalFile(" + trackId + ", " + status + ", " + progress + ")\n";
+        }
+
+        function fae_loadingUrl(trackId,status,progress)
+        {
+            document.myform.fae_tf.value += "fae_loadingUrl(" + trackId + ", " + status + ", " + progress + ")\n";
+        }
+
+        //----------------------------------
+        //  Удаление
+        //----------------------------------
+
+        function clickRemoveTrack()
+        {
+            document.getElementById("FlashAudioEditor").deleteTrack(document.myform.id_remove_input.value);
+        }
+
+        //----------------------------------
+        //  Проигрывание
+        //----------------------------------
+
+        function clickPlayTrack()
+        {
+            document.getElementById("FlashAudioEditor").play(document.myform.id_play_input.value, document.myform.start_pos_input.value, document.myform.end_pos_input.value);
+        }
+
+        function clickStopTrack()
+        {
+            document.getElementById("FlashAudioEditor").stop();
+        }
+
+        function clickSetVolume()
+        {
+            document.getElementById("FlashAudioEditor").setVolume(document.myform.vol_input.value);
+        }
+
+        function fae_stopped(second)
+        {
+            document.myform.fae_tf.value += "fae_stopped(" + second + ")\n";
+        }
+
+        function fae_playing(trackId, second)
+        {
+            document.myform.fae_tf.value += "fae_playing(" + trackId + ", " + second + ")\n";
+        }
+
+        //----------------------------------
+        //  Запись
+        //----------------------------------
+
+        function clickRecord()
+        {
+            document.getElementById("FlashAudioEditor").record(document.myform.id_rec_input.value);
+        }
+
+        function clickStopRecord()
+        {
+            document.getElementById("FlashAudioEditor").stopRecording();
+        }
+
+        function fae_permissionGranted()
+        {
+            document.myform.fae_tf.value += "fae_permissionGranted()\n";
+            document.getElementById("FlashAudioEditor").width = 80;
+            document.getElementById("FlashAudioEditor").height = 20;
+        }
+
+        function fae_permissionRequired()
+        {
+            document.myform.fae_tf.value += "fae_permissionRequired()\n";
+            document.getElementById("FlashAudioEditor").width = 220;
+            document.getElementById("FlashAudioEditor").height = 142;
+        }
+
+        function fae_recordingStopped(seconds)
+        {
+            document.myform.fae_tf.value += "fae_recordingStopped(" + seconds + ")\n";
+        }
+
+        function fae_recording(trackId, status, second, waveformPart)
+        {
+            document.myform.fae_tf.value += "fae_recording(" + trackId + ", " + status + ", " + second + ", " + waveformPart + ")\n";
+        }
+
+        //----------------------------------
+        //  Спектр
+        //----------------------------------
+
+        function clickGenerateWaveform()
+        {
+            document.getElementById("FlashAudioEditor").generateWaveform(document.myform.id_gen_wave_input.value);
+        }
+
+        function fae_generatingWaveform(trackId, status, progress, waveformPart)
+        {
+            document.myform.fae_tf.value += "fae_generationgWaveform(" + trackId + ", " + status + ", " + progress + ", " + waveformPart + ")\n";
+        }
+
+        //----------------------------------
+        //  Отправка
+        //----------------------------------
+
+        function clickUpload()
+        {
+            document.getElementById("FlashAudioEditor").upload(document.myform.id_upload_input.value, document.myform.url_upload_input.value, document.myform.name_upload_input.value, document.myform.json_upload_input.value);
+        }
+
+        function clickStopUploading()
+        {
+            document.getElementById("FlashAudioEditor").stopUploading(document.myform.id_stop_upl_input.value);
+        }
+
+        function fae_uploading(trackId, status, progress)
+        {
+            document.myform.fae_tf.value += "fae_uploading(" + trackId + ", " + status + ", " + progress + ")\n";
+        }
+
+    </script>
+</head>
+<body>
+
+    <div id="flashContent">
+        <p>
+            To view this page ensure that Adobe Flash Player version
+            11.1.0 or greater is
+            installed.
+        </p>
+        <script type="text/javascript">
+            var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://");
+            document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='"
+                    + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>");
+        </script>
+    </div>
+
+    <br>
+
+    <FORM NAME="myform">
+        <P>
+
+            <b>Создание:</b>
+            <br>
+            <input type="button" name="track_empty_btn"
+                   value="Create Empty Track"
+                   onclick="clickCreateEmptyTrack();"/>
+            <br>
+            <input type="button" name="track_url_btn"
+                   value="Create Track From URL"
+                   onclick="clickCreateTrackFromURL();"/>
+            URL:<input type="text" name="url_track_url_input"
+                       value="http://ninasb.ru/fae/track.mp3">
+
+        <P>
+
+            <b>Удаление:</b>
+            <br>
+            <input type="button" name="track_remove_btn" value="Remove Track"
+                   onclick="clickRemoveTrack();"/>
+            id:<input type="text" name="id_remove_input" value="">
+
+        <p>
+
+            <b>Проигрывание:</b>
+            <br>
+            <input type="button" name="play_btn" value="Play"
+                   onclick="clickPlayTrack();"/>
+            id:<input type="text" name="id_play_input" value="">
+            startpos:<input type="text" name="start_pos_input" value="0">
+            endpos:<input type="text" name="end_pos_input" value="10">
+            <br>
+            <input id="stop_btn" type="button" value="Stop"
+                   onclick="clickStopTrack();"/>
+
+        <p>
+
+            <b>Запись:</b>
+            <br>
+            <input id="record_btn" type="button" value="Record"
+                   onclick="clickRecord();"/>
+            id:<input type="text" name="id_rec_input" value="">
+            <br>
+            <input id="stop_record_btn" type="button" value="Stop Record"
+                   onclick="clickStopRecord();"/>
+
+        <p>
+
+
+        <b>Спектр:</b>
+        <br>
+        <input id="gen_waveform_btn" type="button" value="Generate Waveform"
+               onclick="clickGenerateWaveform();"/>
+        id:<input type="text" name="id_gen_wave_input" value="">
+
+        <P>
+
+        <b>Громкость:</b>
+        <br>
+        <input id="volume_btn" type="button" value="Set Volume"
+               onclick="clickSetVolume();"/>
+        id:<input type="text" name="vol_input" value="1">
+
+        <P>
+
+
+            <b>Отправка:</b>
+            <br>
+            <input id="upload_btn" type="button" value="Upload"
+                   onclick="clickUpload();"/>
+            id:<input type="text" name="id_upload_input" value="">
+            url:<input type="text" name="url_upload_input" value="http://ninasb.ru/fae/test.php">
+            JSON data:<input type="text" name="json_upload_input" value=
+            '{
+            " firstName": "Иван",
+            "lastName": "Иванов",
+            "address": {
+            "streetAddress": "Московское ш., 101, кв.101",
+            "city": "Ленинград",
+            "postalCode": 101101
+            },
+            "phoneNumbers": [
+            "812 123-1234",
+            "916 123-4567"
+            ]
+            }'>
+            field name:<input type="text" name="name_upload_input" value="audio">
+            <br>
+            <input id="stop_upload_btn" type="button" value="Stop Uploading"
+                   onclick="clickStopUploading();"/>
+            id:<input type="text" name="id_stop_upl_input" value="">
+
+        <P>
+
+            <b>ДАННЫЕ ВОЗВРАЩЕННЫЕ FAE:</b>
+            <br>
+            <textarea name="fae_tf" id="fae_tf" rows="20" cols="100"></textarea>
+            <br>
+            <input type="button" value="CLEAR" onclick="fae_tf.value = ''"/>
+
+    </FORM>
+
+    <noscript>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                width="100%" height="100%" id="FlashAudioEditor">
+            <param name="movie" value="FlashAudioEditor.swf"/>
+            <param name="quality" value="high"/>
+            <param name="bgcolor" value="#ffffff"/>
+            <param name="allowScriptAccess" value="sameDomain"/>
+            <param name="allowFullScreen" value="true"/>
+            <!--[if !IE]>-->
+            <object type="application/x-shockwave-flash" data="FlashAudioEditor.swf"
+                    width="100%" height="100%">
+                <param name="quality" value="high"/>
+                <param name="bgcolor" value="#ffffff"/>
+                <param name="allowScriptAccess" value="sameDomain"/>
+                <param name="allowFullScreen" value="true"/>
+                <!--<![endif]-->
+                <!--[if gte IE 6]>-->
+                <p>
+                    Either scripts and active content are not permitted to run
+                    or Adobe Flash Player version
+                    11.1.0 or
+                    greater is not installed.
+                </p>
+                <!--<![endif]-->
+                <a href="http://www.adobe.com/go/getflashplayer">
+                    <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+                         alt="Get Adobe Flash Player"/>
+                </a>
+                <!--[if !IE]>-->
+            </object>
+            <!--<![endif]-->
+        </object>
+    </noscript>
+</body>
+</html>
